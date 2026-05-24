@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>직영점 위탁운영 전문 점주 모집 | Joint Success Opportunity</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F0D080;
+    --green-dark: #0A2A1A;
+    --green-mid: #0F3D22;
+    --green-accent: #1A5C35;
+    --cream: #F5EDD8;
+    --white: #FFFFFF;
+    --text-muted: #A8B8A0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--green-dark);
+    color: var(--cream);
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 20px 60px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 80% 100%, rgba(26,92,53,0.4) 0%, transparent 60%),
+      linear-gradient(160deg, #041510 0%, #0A2A1A 50%, #051A0D 100%);
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.04) 60px, rgba(201,168,76,0.04) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.04) 60px, rgba(201,168,76,0.04) 61px);
+  }
+
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 32px;
+    position: relative;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(32px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.2;
+    position: relative;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold-light);
+    position: relative;
+  }
+
+  .hero-sub {
+    margin-top: 20px;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+
+  .hero-highlight {
+    margin-top: 40px;
+    animation: fadeUp 0.9s ease 0.5s both;
+  }
+
+  .hero-highlight .amount {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(48px, 9vw, 110px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .hero-highlight .label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .scroll-cta {
+    margin-top: 48px;
+    animation: fadeUp 0.9s ease 0.7s both;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #A8882A);
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 16px 44px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 80px 20px; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .section-title em { font-style: normal; color: var(--gold-light); }
+
+  .divider {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin: 24px 0;
+  }
+
+  /* ── WHY SECTION ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .why-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .why-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-4px); }
+  .why-card:hover::before { opacity: 1; }
+
+  .why-icon {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .why-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  /* ── BRANDS ── */
+  .brands-section { background: rgba(0,0,0,0.2); }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .brand-card {
+    position: relative;
+    background: linear-gradient(145deg, #0F3D22, #082515);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+  }
+
+  .brand-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .brand-color-bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .brand-card-inner { padding: 28px 24px 32px; }
+
+  .brand-emoji { font-size: 42px; margin-bottom: 14px; display: block; }
+
+  .brand-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+
+  .brand-type {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .brand-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+  }
+
+  /* ── CONDITIONS ── */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  @media(max-width: 640px) { .conditions-grid { grid-template-columns: 1fr; } }
+
+  .cond-item {
+    padding: 32px 24px;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: rgba(255,255,255,0.02);
+    text-align: center;
+  }
+
+  .cond-item:nth-child(3n) { border-right: none; }
+
+  .cond-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .cond-unit { font-size: 14px; color: var(--gold); margin-bottom: 8px; }
+  .cond-label { font-size: 13px; color: var(--text-muted); }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      linear-gradient(180deg, #051A0D 0%, #041510 100%);
+  }
+
+  .form-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  @media(max-width: 768px) { .form-wrap { grid-template-columns: 1fr; gap: 40px; } }
+
+  .form-info h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .form-info p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .check-list { list-style: none; }
+  .check-list li {
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--cream);
+  }
+
+  .check-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .form-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 40px 32px;
+    position: relative;
+  }
+
+  .form-box::before {
+    content: 'DB 수집 신청';
+    position: absolute;
+    top: -12px; left: 24px;
+    background: var(--green-dark);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 2px 12px;
+  }
+
+  .form-box h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .form-box p.form-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .field { margin-bottom: 18px; }
+
+  .field label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .field input, .field select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--cream);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .field input:focus, .field select:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .field select option { background: #0A2A1A; color: var(--cream); }
+
+  .field input::placeholder { color: rgba(168,184,160,0.5); }
+
+  .privacy-note {
+    font-size: 11px;
+    color: rgba(168,184,160,0.6);
+    line-height: 1.7;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #A8882A);
+    color: var(--green-dark);
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-submit::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.2s;
+  }
+
+  .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+
+  /* ── SUCCESS MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: linear-gradient(145deg, #0F3D22, #082515);
+    border: 1px solid var(--gold);
+    padding: 48px 40px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    animation: scaleIn 0.3s ease;
+  }
+
+  .modal-icon { font-size: 48px; margin-bottom: 20px; }
+  .modal h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+  .modal p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
+  .modal-close {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 10px 28px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s;
+  }
+  .modal-close:hover { background: var(--gold); color: var(--green-dark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #020D07;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .footer-contact a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  footer p { font-size: 11px; color: rgba(168,184,160,0.4); letter-spacing: 1px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── FLOATING CTA ── */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 100;
+    animation: fadeUp 1s ease 1.5s both;
+  }
+
+  .floating-btn {
+    background: linear-gradient(135deg, var(--gold), #A8882A);
+    color: var(--green-dark);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 14px 22px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    transition: all 0.3s;
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .floating-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,0.5); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 50;
+    background: rgba(4,21,16,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+  }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold); color: var(--green-dark); }
+
+  /* ── PROCESS ── */
+  .process-steps {
+    display: flex;
+    gap: 0;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .step {
+    flex: 1;
+    min-width: 160px;
+    padding: 28px 20px;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-right: none;
+    position: relative;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .step:last-child { border-right: 1px solid rgba(201,168,76,0.15); }
+
+  .step::after {
+    content: '→';
+    position: absolute;
+    right: -12px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 16px;
+    z-index: 1;
+    background: var(--green-dark);
+    padding: 0 4px;
+  }
+
+  .step:last-child::after { display: none; }
+
+  .step-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: rgba(201,168,76,0.2);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+
+  .step-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+
+  @media(max-width: 640px) {
+    .step { border-right: 1px solid rgba(201,168,76,0.15); border-bottom: none; }
+    .step::after { content: '↓'; right: 50%; bottom: -14px; top: auto; transform: translateX(50%); }
+    .step:last-child::after { display: none; }
+    .process-steps { flex-direction: column; }
+  }
+
+  .urgency-bar {
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .urgency-bar span { font-size: 13px; color: var(--cream); }
+  .urgency-bar strong { color: var(--gold-light); }
+
+  .pulse { animation: pulse 2s ease infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">㈜퍼니아이앤씨 | Joint Success</span>
+  <a href="#apply" class="nav-cta">지금 신청하기</a>
+</nav>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="#apply" class="floating-btn">✦ 무료 상담 신청</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div style="position:relative; z-index:1; max-width:800px;">
+    <div class="badge">직영점 위탁운영 전문 점주 모집 | Joint Success Opportunity</div>
+    <h1 class="hero-title">
+      40년 외식 전문 기업의<br>노하우를<br>
+      <em>당신의 수익으로</em> 만드십시오.
+    </h1>
+    <p class="hero-sub">창업투자로 본사가, 수익의 기회는 점주님께.</p>
+
+    <div class="hero-highlight">
+      <div style="font-size: clamp(13px,2vw,16px); color: var(--text-muted); margin-bottom:8px; letter-spacing:1px;">단돈 1,000만원으로 내 장사 시작 · 월 예상 수령액</div>
+      <div class="amount">700만원<span style="color:var(--gold);font-size:0.7em;">+α</span></div>
+      <div style="display:flex; justify-content:center; gap:24px; margin-top:14px; flex-wrap:wrap;">
+        <span style="font-size:13px; color:var(--text-muted);">고정 <strong style="color:var(--cream);">400만원</strong> 보장</span>
+        <span style="font-size:13px; color:var(--text-muted);">수익 배분 <strong style="color:var(--cream);">300만원 이상</strong> 추가</span>
+      </div>
+    </div>
+
+    <div class="scroll-cta">
+      <a href="#apply" class="btn-primary">지금 바로 도전하십시오 →</a>
+    </div>
+
+    <div class="urgency-bar">
+      <span class="pulse" style="color:var(--gold);">●</span>
+      <span>총 <strong>4개 브랜드 직영점</strong> 각 <strong>1명</strong>씩만 선발 · 조기 마감 가능</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SECTION -->
+<section id="why">
+  <div class="container">
+    <div class="section-label">Why Us</div>
+    <h2 class="section-title">리스크는 본사가,<br><em>수익은 점주님이</em></h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🛡</div>
+        <h3>리스크 제로</h3>
+        <p>초기 투자비 부담 제로, 권리금 없음.<br>본사가 직접 시설·운영 비용을 투자합니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <h3>고수익 실현</h3>
+        <p>고정 수익 400만원 보장 + 성과 인센티브.<br>매출 성과에 따른 추가 수익 배분 구조.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎓</div>
+        <h3>실전 인큐베이팅</h3>
+        <p>가맹점 창업 시 대출 1억원 조달 지원!<br>외식업 창업 노하우를 직접 체득하십시오.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS SECTION -->
+<section id="brands" class="brands-section">
+  <div class="container">
+    <div class="section-label">Our Brands</div>
+    <h2 class="section-title">총 <em>4개 직영 브랜드</em> 위탁 운영</h2>
+    <p style="color:var(--text-muted); font-size:14px; margin-bottom:4px;">각 브랜드별 위탁운영자 1명만 선발합니다. 관심 브랜드를 선택해 신청해 주세요.</p>
+    <div class="divider"></div>
+    <div class="brands-grid">
+
+      <div class="brand-card">
+        <div class="brand-color-bar" style="background:linear-gradient(90deg,#B8860B,#FFD700);"></div>
+        <div class="brand-card-inner">
+          <span class="brand-emoji">🍖</span>
+          <div class="brand-name">족슐랭</div>
+          <div class="brand-type">족발 · 보쌈 전문</div>
+          <p class="brand-desc">미슐랭 감성의 프리미엄 족발 브랜드. 검증된 레시피와 안정적인 단골 수요로 높은 재방문율을 자랑합니다.</p>
+          <span class="brand-badge">✦ 1명 모집</span>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-color-bar" style="background:linear-gradient(90deg,#8B4513,#D2691E);"></div>
+        <div class="brand-card-inner">
+          <span class="brand-emoji">🍲</span>
+          <div class="brand-name">솥탐</div>
+          <div class="brand-type">솥밥 · 한식 전문</div>
+          <p class="brand-desc">정통 한식 솥밥의 깊은 맛. 건강식 트렌드에 부합하는 메뉴 구성으로 전 연령대에서 사랑받는 브랜드.</p>
+          <span class="brand-badge">✦ 1명 모집</span>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-color-bar" style="background:linear-gradient(90deg,#C0392B,#E74C3C);"></div>
+        <div class="brand-card-inner">
+          <span class="brand-emoji">🐿</span>
+          <div class="brand-name">빨강다람쥐</div>
+          <div class="brand-type">분식 · 간식 전문</div>
+          <p class="brand-desc">개성 넘치는 캐릭터 브랜딩과 중독성 있는 메뉴. 젊은 층과 가족 단위 고객의 높은 충성도를 보유합니다.</p>
+          <span class="brand-badge">✦ 1명 모집</span>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-color-bar" style="background:linear-gradient(90deg,#1A5276,#2E86C1);"></div>
+        <div class="brand-card-inner">
+          <span class="brand-emoji">🍗</span>
+          <div class="brand-name">투홀릭치킨</div>
+          <div class="brand-type">치킨 · 주류 전문</div>
+          <p class="brand-desc">투(Two)가지 매력의 치킨 전문점. 배달·홀 모두 강세이며 야간 시간대 수익성이 특히 뛰어납니다.</p>
+          <span class="brand-badge">✦ 1명 모집</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section id="conditions">
+  <div class="container">
+    <div class="section-label">Conditions</div>
+    <h2 class="section-title">위탁운영 <em>조건 한눈에</em></h2>
+    <div class="divider"></div>
+    <div class="conditions-grid">
+      <div class="cond-item">
+        <div class="cond-num">1,000</div>
+        <div class="cond-unit">만원</div>
+        <div class="cond-label">초기 참여 보증금</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-num">400</div>
+        <div class="cond-unit">만원 / 월</div>
+        <div class="cond-label">고정 수익 보장</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-num">300+</div>
+        <div class="cond-unit">만원 / 월</div>
+        <div class="cond-label">성과 인센티브 추가</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-num">0</div>
+        <div class="cond-unit">원</div>
+        <div class="cond-label">권리금 · 시설비 부담</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-num">1억</div>
+        <div class="cond-unit">원</div>
+        <div class="cond-label">가맹 창업 대출 지원</div>
+      </div>
+      <div class="cond-item">
+        <div class="cond-num">4</div>
+        <div class="cond-unit">개 브랜드</div>
+        <div class="cond-label">각 1명 한정 모집</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background:rgba(0,0,0,0.15);">
+  <div class="container">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">상담 진행 <em>4단계</em></h2>
+    <div class="divider"></div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">정보 입력</div>
+        <div class="step-desc">이름·연령대·연락처<br>간단 기입</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">DB 확인</div>
+        <div class="step-desc">담당자가 신청 내용<br>1:1 검토</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">유선 상담</div>
+        <div class="step-desc">영업일 기준 1~2일 내<br>개별 연락</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">계약 체결</div>
+        <div class="step-desc">조건 확인 후<br>위탁 운영 시작</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section id="apply" class="form-section">
+  <div class="container">
+    <div class="section-label">Apply Now</div>
+    <h2 class="section-title">지금 바로 <em>상담 신청</em>하십시오</h2>
+    <div class="divider"></div>
+
+    <div class="form-wrap">
+      <div class="form-info">
+        <h3>소자본 고수익을 원하는<br>파트너를 찾습니다</h3>
+        <p>외식 창업에 관심 있으신가요?<br>40년 노하우의 직영점을 단돈 1,000만원으로 위탁 운영하고, 월 700만원 이상의 수익을 실현하십시오.</p>
+        <ul class="check-list">
+          <li>외식 창업 목표 및 실전 경영 노하우 습득 희망자</li>
+          <li>소자본 고수익 실현의 열정을 가진 파트너</li>
+          <li>성실하게 운영에 임할 의지가 있는 분</li>
+          <li>외식업 경험 무관 · 본사 실전 교육 제공</li>
+        </ul>
+
+        <div style="margin-top:32px; padding:20px; border:1px solid rgba(201,168,76,0.2);">
+          <div style="font-size:11px; letter-spacing:2px; color:var(--gold); margin-bottom:10px;">CONTACT</div>
+          <div style="font-size:14px; line-height:2; color:var(--cream);">
+            📞 T. 02-579-7717<br>
+            ✉ E. fun7717@funni.co.kr
+          </div>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <h3>무료 상담 신청</h3>
+        <p class="form-desc">아래 정보를 입력하시면 담당자가 직접 연락드립니다.</p>
+
+        <div class="field">
+          <label>이름</label>
+          <input type="text" id="f-name" placeholder="홍길동" />
+        </div>
+
+        <div class="field">
+          <label>연령대</label>
+          <select id="f-age">
+            <option value="" disabled selected>연령대를 선택하세요</option>
+            <option>20대</option>
+            <option>30대</option>
+            <option>40대</option>
+            <option>50대</option>
+            <option>60대 이상</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>연락처</label>
+          <input type="tel" id="f-phone" placeholder="010-0000-0000" />
+        </div>
+
+        <div class="field">
+          <label>관심 브랜드</label>
+          <select id="f-brand">
+            <option value="" disabled selected>관심 브랜드를 선택하세요</option>
+            <option>족슐랭</option>
+            <option>솥탐</option>
+            <option>빨강다람쥐</option>
+            <option>투홀릭치킨</option>
+            <option>미정 (상담 후 결정)</option>
+          </select>
+        </div>
+
+        <button class="btn-submit" onclick="handleSubmit()">무료 상담 신청하기 →</button>
+
+        <p class="privacy-note">
+          ※ 수집된 개인정보(이름, 연령대, 연락처)는 상담 목적으로만 사용되며, 
+          관련 법령에 따라 안전하게 관리됩니다. 상담 완료 후 즉시 파기됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-contact">
+    <a href="tel:02-579-7717">📞 02-579-7717</a>
+    <a href="mailto:fun7717@funni.co.kr">✉ fun7717@funni.co.kr</a>
+  </div>
+  <p>© 2026 ㈜퍼니아이앤씨 | 직영점 위탁운영 전문 점주 모집</p>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-icon">✅</div>
+    <h3>신청이 완료되었습니다!</h3>
+    <p>소중한 신청 감사드립니다.<br>담당자가 영업일 기준 <strong style="color:var(--gold-light);">1~2일 내</strong>로<br>입력하신 연락처로 직접 연락드리겠습니다.</p>
+    <button class="modal-close" onclick="closeModal()">확인</button>
+  </div>
+</div>
+
+<script>
+  function handleSubmit() {
+    const name = document.getElementById('f-name').value.trim();
+    const age  = document.getElementById('f-age').value;
+    const phone = document.getElementById('f-phone').value.trim();
+    const brand = document.getElementById('f-brand').value;
+
+    if (!name)  { alert('이름을 입력해 주세요.'); return; }
+    if (!age)   { alert('연령대를 선택해 주세요.'); return; }
+    if (!phone) { alert('연락처를 입력해 주세요.'); return; }
+    if (!brand) { alert('관심 브랜드를 선택해 주세요.'); return; }
+
+    // 실제 서비스에서는 여기에 서버/시트 전송 로직 삽입
+    console.log({ name, age, phone, brand });
+
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+    document.getElementById('f-name').value = '';
+    document.getElementById('f-age').value = '';
+    document.getElementById('f-phone').value = '';
+    document.getElementById('f-brand').value = '';
+  }
+
+  // Phone auto-format
+  document.getElementById('f-phone').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length <= 3) e.target.value = v;
+    else if (v.length <= 7) e.target.value = v.slice(0,3) + '-' + v.slice(3);
+    else e.target.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7,11);
+  });
+</script>
+</body>
+</html>
